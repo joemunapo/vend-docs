@@ -21,3 +21,5 @@
 * Electricity
   - [Check User Account](electricity/verify-account.md)
   - [Buy Tokens](electricity/buy-electricity.md)
+
+- [Wallet](wallet/index.md)
