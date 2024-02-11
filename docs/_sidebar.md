@@ -19,6 +19,8 @@
   - [Buy Direct Bundle](bundle/buy-direct.md)
   - [Buy Bundle Voucher](bundle/buy-voucher.md)
 
+* [Service](services/index.md)
+
 * Electricity
   - [Check User Account](electricity/verify-account.md)
   - [Buy Tokens](electricity/buy-electricity.md)

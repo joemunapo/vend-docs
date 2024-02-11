@@ -24,15 +24,18 @@ The response includes an array of carriers that are available for direct airtime
 [
   {
     "name": "Econet",
-    "commission": 2.5
+    "commission": 2.5,
+    "id": 1
   },
   {
     "name": "Telecel",
-    "commission": 3.0
+    "commission": 3.0,
+    "id": 2
   },
   {
     "name": "NetOne",
-    "commission": 2.0
+    "commission": 2.0,
+    "id": 3
   }
 ]
 ```
@@ -40,4 +43,3 @@ The response includes an array of carriers that are available for direct airtime
 #### Notes
 - This API call returns only carriers that support direct airtime purchases, simplifying the selection process for users looking to recharge airtime directly.
 - The list provided to the end user focuses on the carriers' names, ensuring a straightforward selection process without overwhelming them with unnecessary details such as vouchers and bundles availability.
-- The inclusion of the commission rate is optional and may be omitted in the user-facing documentation if it does not directly affect the end user's experience or decision-making process.
