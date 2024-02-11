@@ -9,6 +9,7 @@ This endpoint provides a list of available data and SMS bundles for purchase. Us
 
 #### Headers
 - **Content-Type:** application/json
+- **Authorization:** Bearer \<Your Access Token\>
 
 #### Query Parameters
 - **currency** (optional): String. Filters the bundles by the specified currency (e.g., "USD").

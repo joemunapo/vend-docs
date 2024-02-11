@@ -9,6 +9,7 @@ This endpoint lists all mobile carriers available on the platform that support d
 
 #### Headers
 - **Content-Type:** application/json
+- **Authorization:** Bearer \<Your Access Token\>
 
 #### Response
 The response includes an array of carriers that are available for direct airtime purchases, with each entry providing details about the carrier. For each carrier, the following information is included:

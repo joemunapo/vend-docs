@@ -9,6 +9,7 @@ This endpoint lists all mobile carriers available on the platform that offer air
 
 #### Headers
 - **Content-Type:** application/json
+- **Authorization:** Bearer \<Your Access Token\>
 
 #### Response
 The response includes an array of carriers that offer airtime vouchers. For each carrier listed, the response provides the following details to aid in the selection process:
