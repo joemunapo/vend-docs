@@ -6,6 +6,7 @@
   - [Register](auth/registration.md)
   - [Set Password](auth/set-password.md)
   - [Create Business](auth/create-business.md)
+  - [Login](auth/login.md)
 
 * Airtime
   - [Direct Carriers](airtime/direct-carriers.md)
