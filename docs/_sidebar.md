@@ -10,6 +10,7 @@
 
 * Airtime
   - [Direct Carriers](airtime/direct-carriers.md)
+  - [Airtime Values](airtime/values.md)
   - [Buy Direct Airtime](airtime/direct-airtime.md)
   - [Voucher Carriers](airtime/voucher-carriers.md)
   - [Buy Voucher Airtime](airtime/buy-voucher.md)
