@@ -31,7 +31,7 @@ This endpoint allows users to set their password after registration.
       "first_name": "John",
       "last_name": "Doe",
       "dob": "2000-01-01",
-      "phone": "263775696233",
+      "phone": "263775123456",
       "id_number": "71-123456X55",
       "user_number": 123456
     }
