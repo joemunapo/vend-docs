@@ -3,10 +3,13 @@
 * [Introduction](/)
 
 * Authentication
-  - [Register](auth/registration.md)
+  - [Registration](auth/registration.md)
   - [Set Password](auth/set-password.md)
-  - [Create Business](auth/create-business.md)
+  - [Resend User Number](auth/resend-user-number.md)
   - [Login](auth/login.md)
+  - [Logout](auth/login.md#logout)
+  - [Create Business](auth/create-business.md)
+  - [Fetch Profile](auth/fetch-profile.md)
 
 * Airtime
   - [Direct Carriers](airtime/direct-carriers.md)
