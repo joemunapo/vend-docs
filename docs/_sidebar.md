@@ -2,7 +2,7 @@
 
 * [Introduction](/)
 
-* Authentication
+* [Authentication](auth/index.md)
   - [Registration](auth/registration.md)
   - [Set Password](auth/set-password.md)
   - [Resend User Number](auth/resend-user-number.md)
