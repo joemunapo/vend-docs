@@ -16,7 +16,7 @@ This endpoint allows users to set their password after registration.
 
 | Name                  | Type   | Description                   | Validation                                             |
 |-----------------------|--------|-------------------------------|--------------------------------------------------------|
-| user_number           | integer | The user's unique user number | Required                                              |
+| user_number           | integer | The user's unique user number that was sent via WhatsApp | Required                                              |
 | password              | string | The new password              | Required, min 8 characters, must include letters (mixed case), numbers, and symbols |
 | password_confirmation | string | The confirmation of the new password | Required, must match the password field         |
 
