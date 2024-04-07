@@ -22,37 +22,23 @@ Upon a successful request, the response includes detailed wallet information, su
 ```json
 {
   "message": "Wallet retrieved successfully",
-  "data": {
-    "profile_phone": "+263771234567",
-    "is_active": true,
-    "balances": [
+  "data":[
       {
-        "ticker": "USD",
+        "currency": "USD",
         "name": "US Dollar",
-        "balance": 1.00
+        "balance": 1.00,
+        "profit_on_hold": 0
       },
       {
-        "ticker": "ZWL",
-        "name": "Zimbabwean Dollar",
-        "balance": 0
+        "currency": "ZiG",
+        "name": "Zimbabwe Gold",
+        "balance": 0,
+        "profit_on_hold": 0
       },
-      {
-        "ticker": "USDCOM",
-        "name": "USD Commission",
-        "balance": 1.00
-      },
-      {
-        "ticker": "ZWLCOM",
-        "name": "ZWL Commission",
-        "balance": 0
-      }
-    ]
-  }
+  ]
 }
 ```
 
 #### Notes
-- The `profile_phone` field represents the user's contact number linked to the wallet. In the response, it is shown with the international dialing code for clarity.
-- The `is_active` boolean flag indicates whether the wallet is currently enabled for transactions.
-- The balances are categorized by currency, with each entry showing the currency's ticker symbol, its full name, and the user's current balance.
+- The balances are categorized by currency, with each entry showing the currency's symbol, its full name, and the user's current balance.
 - This endpoint is pivotal for maintaining user trust and providing them with the necessary tools to manage their finances within the app.
