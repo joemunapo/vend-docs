@@ -41,4 +41,3 @@ Upon a successful request, the response includes detailed wallet information, su
 
 #### Notes
 - The balances are categorized by currency, with each entry showing the currency's symbol, its full name, and the user's current balance.
-- This endpoint is pivotal for maintaining user trust and providing them with the necessary tools to manage their finances within the app.
