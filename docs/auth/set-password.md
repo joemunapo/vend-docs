@@ -27,14 +27,8 @@ This endpoint allows users to set their password after registration.
   {
     "success": true,
     "message": "Password set successfully.",
-    "data": {
-      "first_name": "John",
-      "last_name": "Doe",
-      "dob": "2000-01-01",
-      "phone": "263775123456",
-      "id_number": "71-123456X55",
-      "user_number": 123456
-    }
+    "accessToken": "JIUzI1NiIsInR5cCI6IkpXVCJ9...", // DO NOT Use this key - to be Deprecated in favor of token for consistency
+    "token": "JIUzI1NiIsInR5cCI6IkpXVCJ9..."
   }
   ```
 
