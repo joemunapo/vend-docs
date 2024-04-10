@@ -22,10 +22,12 @@
   - [Buy Direct Bundle](bundle/buy-direct.md)
   - [Buy Bundle Voucher](bundle/buy-voucher.md)
 
-* [Services](services/index.md)
-
 * Electricity
   - [Check User Account](electricity/verify-account.md)
   - [Buy Tokens](electricity/buy-electricity.md)
 
-- [Wallet](wallet/index.md)
+* [Reports](reports/index.md)
+  - [Balances](reports/balances.md)
+  - [Min Statement](reports/min-statement.md)
+  - [Account History](reports/history.md)
+  - [Balances](reports/summary.md)
