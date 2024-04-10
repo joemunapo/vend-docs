@@ -37,4 +37,4 @@ This endpoint returns a list of carriers that support voucher airtime along with
   }
   ```
 
-[Prev: Buy Direct Airtime](buy-direct-airtime.md) | [Next: Voucher Values](voucher-values.md)
+[Prev: Buy Direct Airtime](./buy-direct-airtime.md) | [Next: Voucher Values](./voucher-values.md)

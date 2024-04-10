@@ -33,4 +33,4 @@ This endpoint returns the available voucher values for a specific carrier identi
   }
   ```
 
-[Prev: Voucher Carriers](voucher-carriers.md) | [Next: Buy Voucher Airtime](buy-voucher-airtime.md)
+[Prev: Voucher Carriers](./voucher-carriers.md) | [Next: Buy Voucher Airtime](./buy-voucher-airtime.md)

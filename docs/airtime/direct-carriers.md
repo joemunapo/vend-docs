@@ -37,4 +37,4 @@ This endpoint returns a list of carriers that support direct airtime recharge al
   }
   ```
 
-[Next: Buy Direct Airtime](buy-direct-airtime.md)
+[Next: Buy Direct Airtime](./buy-direct-airtime.md)
