@@ -1,45 +1,40 @@
-### Available Airtime Carriers API
+# Direct Carriers
 
-#### Description
-This endpoint lists all mobile carriers available on the platform that support direct airtime purchases. It is designed to provide end users with the necessary information to select a carrier for direct airtime recharge.
+This endpoint allows you to retrieve a list of carriers that support direct airtime recharge.
 
-#### Route
-- **Method:** GET
-- **URL:** `/v1/airtime/direct/carriers`
+**Method:** `GET`
 
-#### Headers
-- **Content-Type:** application/json
-- **Authorization:** Bearer \<Your Access Token\>
+**Endpoint:** `/api/v1/airtime/direct/carriers`
 
-#### Response
-The response includes an array of carriers that are available for direct airtime purchases, with each entry providing details about the carrier. For each carrier, the following information is included:
-- **name**: String. The official name of the carrier.
-- **commission**: Numeric. The commission percentage associated with airtime purchases from this carrier. (This field is for internal use and may not be displayed to the end user if not relevant.)
+This endpoint returns a list of carriers that support direct airtime recharge along with their details such as ID, name, and commission.
 
-#### Response Status Codes
-- **200 OK**: Successfully retrieved the list of available carriers for direct airtime purchases.
+**Headers:**
 
-#### Example Response
-```json
-[
+| Name          | Value            |
+|---------------|------------------|
+| Accept        | application/json |
+| Authorization | Bearer {token}   |
+
+**Responses:**
+
+- 200 OK:
+  ```json
   {
-    "name": "Econet",
-    "commission": 2.5,
-    "id": 1
-  },
-  {
-    "name": "Telecel",
-    "commission": 3.0,
-    "id": 2
-  },
-  {
-    "name": "NetOne",
-    "commission": 2.0,
-    "id": 3
+    "success": true,
+    "message": "Direct airtime carriers",
+    "data": [
+      {
+        "id": 1,
+        "name": "Carrier 1",
+        "commission": 0.05
+      },
+      {
+        "id": 2,
+        "name": "Carrier 2",
+        "commission": 0.03
+      }
+    ]
   }
-]
-```
+  ```
 
-#### Notes
-- This API call returns only carriers that support direct airtime purchases, simplifying the selection process for users looking to recharge airtime directly.
-- The list provided to the end user focuses on the carriers' names, ensuring a straightforward selection process without overwhelming them with unnecessary details such as vouchers and bundles availability.
+[Next: Buy Direct Airtime](buy-direct-airtime.md)

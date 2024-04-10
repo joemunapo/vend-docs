@@ -10,12 +10,12 @@
   - [Create Business](auth/create-business.md)
   - [Fetch Profile](auth/fetch-profile.md)
 
-* Airtime
+* [Airtime](airtime/index.md)
   - [Direct Carriers](airtime/direct-carriers.md)
-  - [Airtime Values](airtime/values.md)
-  - [Buy Direct Airtime](airtime/direct-airtime.md)
+  - [Buy Direct Airtime](airtime/buy-direct-airtime.md)
   - [Voucher Carriers](airtime/voucher-carriers.md)
-  - [Buy Voucher Airtime](airtime/buy-voucher.md)
+  - [Airtime Values](airtime/voucher-values.md)
+  - [Buy Voucher Airtime](airtime/buy-voucher-airtime.md)
 
 * Bundles
   - [Available Bundles](bundle/available-bundles.md)
