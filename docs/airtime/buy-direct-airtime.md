@@ -55,4 +55,4 @@ This endpoint processes a direct airtime recharge request. It requires the mobil
   }
   ```
 
-[Prev: Direct Carriers](./direct-carriers.md) | [Next: Voucher Carriers](./voucher-carriers.md)
+[Prev: Direct Carriers](./carriers.md) | [Next: Voucher Values](./voucher-values.md)

@@ -11,9 +11,8 @@
   - [Fetch Profile](auth/fetch-profile.md)
 
 * [Airtime](airtime/index.md)
-  - [Direct Carriers](airtime/direct-carriers.md)
+  - [Carriers](airtime/carriers.md)
   - [Buy Direct Airtime](airtime/buy-direct-airtime.md)
-  - [Voucher Carriers](airtime/voucher-carriers.md)
   - [Airtime Values](airtime/voucher-values.md)
   - [Buy Voucher Airtime](airtime/buy-voucher-airtime.md)
 
