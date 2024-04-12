@@ -1,8 +1,9 @@
 <!-- docs/_sidebar.md -->
 
-* [Introduction](/)
+- [Introduction](/)
 
-* [Authentication](auth/index.md)
+- [Authentication](auth/index.md)
+
   - [Registration](auth/registration.md)
   - [Set Password](auth/set-password.md)
   - [Resend User Number](auth/resend-user-number.md)
@@ -10,22 +11,25 @@
   - [Create Business](auth/create-business.md)
   - [Fetch Profile](auth/fetch-profile.md)
 
-* [Airtime](airtime/index.md)
+- [Airtime](airtime/index.md)
+
   - [Carriers](airtime/carriers.md)
   - [Buy Direct Airtime](airtime/buy-direct-airtime.md)
   - [Airtime Values](airtime/voucher-values.md)
   - [Buy Voucher Airtime](airtime/buy-voucher-airtime.md)
 
-* Bundles
+- [Bundles](bundle/index.md)
+
   - [Available Bundles](bundle/available-bundles.md)
   - [Buy Direct Bundle](bundle/buy-direct.md)
   - [Buy Bundle Voucher](bundle/buy-voucher.md)
 
-* Electricity
+- Electricity
+
   - [Check User Account](electricity/verify-account.md)
   - [Buy Tokens](electricity/buy-electricity.md)
 
-* [Reports](reports/index.md)
+- [Reports](reports/index.md)
   - [Balances](reports/balances.md)
   - [Min Statement](reports/min-statement.md)
   - [Account History](reports/history.md)
