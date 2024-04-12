@@ -2,11 +2,6 @@
 
 The Bundles API allows users to retrieve available bundles, purchase bundles directly, and buy bundle vouchers. It provides endpoints for browsing bundles, applying bundles to mobile numbers, and generating vouchers for later use.
 
-## Quick Links
-- [Available Bundles](./available-bundles.md)
-- [Buy Direct Bundle](./buy-direct.md)
-- [Buy Bundle Voucher](./buy-voucher.md)
-
 ## Available Endpoints
 
 - [Available Bundles](./available-bundles.md)
