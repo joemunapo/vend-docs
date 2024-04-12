@@ -20,7 +20,7 @@ This endpoint processes a voucher airtime purchase request for a specific carrie
 
 | Name    | Type    | Description                       |
 |---------|---------|-----------------------------------|
-| carrier | string  | The name or identifier of the carrier |
+| carrier | string  | ID of the carrier returned from carriers endpoint |
 
 **Body:**
 
