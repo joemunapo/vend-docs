@@ -29,8 +29,19 @@
   - [Check User Account](electricity/verify-account.md)
   - [Buy Tokens](electricity/buy-electricity.md)
 
+- [Transfer Credit](transfer/index.md)
+
+- [Load Funds](deposit/index.md)
+
+  - [Agents](deposit/agents.md)
+  - [Bank Transfer](deposit/bank-transfer.md)
+  - [InnBucks](deposit/innbucks.md)
+  - [Ecocash](deposit/ecocash.md)
+
 - [Reports](reports/index.md)
+
   - [Balances](reports/balances.md)
   - [Min Statement](reports/min-statement.md)
   - [Account History](reports/history.md)
   - [Balances](reports/summary.md)
+  - [Commissions](reports/commissions.md)
