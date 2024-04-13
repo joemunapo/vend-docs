@@ -36,5 +36,5 @@ By following these steps and leveraging the Electricity API endpoints, you can s
 
 For detailed information on each endpoint, request parameters, and response formats, please refer to the respective endpoint documentation:
 
-- [Check User Account](/verify-account.md)
+- [Check User Account](../verify-account.md)
 - [Buy Tokens](/buy-tokens.md)
