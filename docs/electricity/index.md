@@ -12,10 +12,10 @@ To purchase electricity tokens, you need to follow these steps:
 
 ## API Endpoints
 
-- [Check User Account](./verify-account.md): `POST /api/v1/electricity/check-account`
+- [Check User Account](/electricity/verify-account.md): `POST /api/v1/electricity/check-account`
   - Verify the user's electricity account details before proceeding with the token purchase.
 
-- [Buy Tokens](./buy-tokens.md): `POST /api/v1/electricity/buy-tokens`
+- [Buy Tokens](/electricity/buy-tokens.md): `POST /api/v1/electricity/buy-tokens`
   - Purchase electricity tokens for a verified account.
 
 ## Token Purchase Flow
@@ -36,5 +36,5 @@ By following these steps and leveraging the Electricity API endpoints, you can s
 
 For detailed information on each endpoint, request parameters, and response formats, please refer to the respective endpoint documentation:
 
-- [Check User Account](../verify-account.md)
-- [Buy Tokens](/buy-tokens.md)
+- [Check User Account](/electricity/verify-account.md)
+- [Buy Tokens](/electricity/buy-tokens.md)

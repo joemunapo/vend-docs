@@ -95,4 +95,4 @@ The client should use this response data to generate the receipt, displaying all
 }
 ```
 
-[Previous](./verify-account.md)
+[Previous](/electricity/verify-account.md)

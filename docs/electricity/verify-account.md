@@ -52,4 +52,4 @@ The response includes:
 }
 ```
 
-[Previous](./index.md) | [Next](./buy-tokens.md)
+[Previous](/electricity/index.md) | [Next](/electricity/buy-tokens.md)
