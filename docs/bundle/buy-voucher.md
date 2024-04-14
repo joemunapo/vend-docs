@@ -56,4 +56,4 @@ Purchases the specified quantity of bundle vouchers. Requires sufficient balance
 }
 ```
 
-[Previous](./buy-direct.md) | [Next](./README.md)
+[Previous](/bundle/buy-direct.md)

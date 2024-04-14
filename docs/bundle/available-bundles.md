@@ -45,4 +45,4 @@ Retrieves a list of available bundles grouped by network and currency. The respo
 }
 ```
 
-[Previous](./index.md) | [Next](./buy-direct.md)
+[Previous](/bundle/index.md) | [Next](/bundle/buy-direct.md)

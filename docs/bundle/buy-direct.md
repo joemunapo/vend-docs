@@ -52,4 +52,4 @@ Purchases the specified bundle and applies it directly to the provided mobile nu
 }
 ```
 
-[Previous](./available-bundles.md) | [Next](./buy-voucher.md)
+[Previous](/bundle/available-bundles.md) | [Next](/bundle/buy-voucher.md)

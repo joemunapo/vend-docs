@@ -54,4 +54,4 @@ The response provides a comprehensive overview of each supported carrier, includ
 
 By leveraging this information, you can dynamically adapt your application's functionality based on the capabilities of each carrier, providing a seamless and tailored experience for your users.
 
-[Next: Buy Direct Airtime](./buy-direct-airtime.md)
+[Next: Buy Direct Airtime](/airtime/buy-direct-airtime.md)

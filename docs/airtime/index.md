@@ -24,10 +24,10 @@ Authorization: Bearer {token}
 
 The following endpoints are available in the Airtime API:
 
-- [Carriers](./carriers.md): Retrieve a list of carriers that support direct airtime recharge.
-- [Buy Direct Airtime](./buy-direct-airtime.md): Purchase direct airtime for a mobile phone number.
-- [Voucher Values](./voucher-values.md): Retrieve available voucher values for a specific carrier.
-- [Buy Voucher Airtime](./buy-voucher-airtime.md): Purchase voucher airtime for a specific carrier.
+- [Carriers](/airtime/carriers.md): Retrieve a list of carriers that support direct airtime recharge.
+- [Buy Direct Airtime](/airtime/buy-direct-airtime.md): Purchase direct airtime for a mobile phone number.
+- [Voucher Values](/airtime/voucher-values.md): Retrieve available voucher values for a specific carrier.
+- [Buy Voucher Airtime](/airtime/buy-voucher-airtime.md): Purchase voucher airtime for a specific carrier.
 
 ## Error Handling
 

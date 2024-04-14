@@ -77,4 +77,4 @@ The response includes the following fields:
 
 If the user is not authenticated or the access token is invalid, a 401 Unauthorized response is returned.
 
-Note: The presence of the `business` field in the response depends on whether the user has created a business using the [Create Business](./create-business.md) endpoint.
+Note: The presence of the `business` field in the response depends on whether the user has created a business using the [Create Business](/auth/create-business.md) endpoint.

@@ -4,13 +4,13 @@ The Bundles API allows users to retrieve available bundles, purchase bundles dir
 
 ## Available Endpoints
 
-- [Available Bundles](./available-bundles.md)
+- [Available Bundles](/bundle/available-bundles.md)
   - `GET /api/v1/bundles` - Retrieve a list of available bundles filtered by currency and network.
 
-- [Buy Direct Bundle](./buy-direct.md)
+- [Buy Direct Bundle](/bundle/buy-direct.md)
   - `POST /api/v1/bundles/buy/{bundle}` - Purchase a bundle and apply it directly to a mobile number.
 
-- [Buy Bundle Voucher](./buy-voucher.md)
+- [Buy Bundle Voucher](/bundle/buy-voucher.md)
   - `POST /api/v1/bundles/voucher/buy/{bundle}` - Purchase a specified quantity of bundle vouchers.
 
 ## Authentication
@@ -50,8 +50,8 @@ The API also calculates and returns the earned commission for each purchase. Com
 To get started with the Bundles API, follow these steps:
 
 1. Obtain an authentication token by logging in or registering a user account.
-2. Browse the available bundles using the [Available Bundles](./available-bundles.md) endpoint.
-3. Purchase bundles directly using the [Buy Direct Bundle](./buy-direct.md) endpoint, or buy vouchers using the [Buy Bundle Voucher](./buy-voucher.md) endpoint.
+2. Browse the available bundles using the [Available Bundles](/bundle/available-bundles.md) endpoint.
+3. Purchase bundles directly using the [Buy Direct Bundle](/bundle/buy-direct.md) endpoint, or buy vouchers using the [Buy Bundle Voucher](/bundle/buy-voucher.md) endpoint.
 4. Monitor the user's wallet balance and earned commissions after each successful purchase.
 
 For detailed information on each endpoint, request parameters, and response formats, refer to the respective endpoint documentation.

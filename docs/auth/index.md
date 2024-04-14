@@ -21,19 +21,19 @@ To access protected endpoints, you need to include an access token in the `Autho
 Authorization: Bearer {access_token}
 ```
 
-Access tokens are obtained through the [Login](./login.md) endpoint and have an expiration time of 1 hour.
+Access tokens are obtained through the [Login](/auth/login.md) endpoint and have an expiration time of 1 hour.
 
 ## Endpoints
 
 The following endpoints are available in the Authentication API:
 
-- [Registration](./registration.md)
-- [Set Password](./set-password.md)
-- [Resend User Number](./resend-user-number.md)
-- [Login](./login.md)
-- [Logout](./login.md#logout)
-- [Create Business](./create-business.md)
-- [Fetch Profile](./fetch-profile.md)
+- [Registration](/auth/registration.md)
+- [Set Password](/auth/set-password.md)
+- [Resend User Number](/auth/resend-user-number.md)
+- [Login](/auth/login.md)
+- [Logout](/auth/login.md#logout)
+- [Create Business](/auth/create-business.md)
+- [Fetch Profile](/auth/fetch-profile.md)
 
 Click on the links above to navigate to the detailed documentation for each endpoint.
 
