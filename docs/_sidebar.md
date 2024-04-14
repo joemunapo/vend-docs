@@ -30,6 +30,8 @@
   - [Buy Tokens](electricity/buy-electricity.md)
 
 - [Transfer Credit](transfer/index.md)
+  - [Initiate Transfer](transfer/initiate-transfer.md)
+  - [Confirm Transfer](transfer/confirm-transfer.md)
 
 - [Load Funds](deposit/index.md)
 
