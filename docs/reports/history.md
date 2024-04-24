@@ -1,6 +1,6 @@
 # Account History
 
-## Short Description
+## Description
 
 Retrieve a user's account history.
 

@@ -43,7 +43,7 @@
 - [Reports](reports/index.md)
 
   - [Balances](reports/balances.md)
-  - [Min Statement](reports/min-statement.md)
+  - [Mini Statement](reports/mini-statement.md)
   - [Account History](reports/history.md)
   - [Balances](reports/summary.md)
   - [Commissions](reports/commissions.md)
