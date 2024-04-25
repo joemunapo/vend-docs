@@ -27,7 +27,7 @@
 - [Electricity](electricity/index.md)
 
   - [Check User Account](electricity/verify-account.md)
-  - [Buy Tokens](electricity/buy-electricity.md)
+  - [Buy Tokens](electricity/buy-tokens.md)
 
 - [Transfer Credit](transfer/index.md)
   - [Initiate Transfer](transfer/initiate-transfer.md)
