@@ -36,9 +36,8 @@
 - [Load Funds](deposit/index.md)
 
   - [Agents](deposit/agents.md)
-  - [Bank Transfer](deposit/bank-transfer.md)
+  - [Bank Transfer](deposit/banks.md)
   - [InnBucks](deposit/innbucks.md)
-  - [Ecocash](deposit/ecocash.md)
 
 - [Reports](reports/index.md)
 
