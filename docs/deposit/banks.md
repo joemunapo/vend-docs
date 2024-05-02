@@ -19,7 +19,7 @@ Retrieves a list of all active banks for the specified currency.
 
 | Name     | Type   | Required | Description                                    |
 |----------|--------|----------|------------------------------------------------|
-| currency | string | Yes      | The currency code (e.g., USD) for bank listings |
+| currency | string | Yes      | The currency code (ZiG/USD) for bank listings |
 
 **Body:** None
 
