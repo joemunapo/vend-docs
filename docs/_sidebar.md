@@ -46,3 +46,13 @@
   - [Account History](reports/history.md)
   - [Balances](reports/summary.md)
   - [Commissions](reports/commissions.md)
+
+- [API Setup](api-setup/index.md)
+
+  - [Telegram Bot API](api-setup/telegram.md)
+  - [E Solutions API](api-setup/e-solutions.md)
+  - [Hot Airtime API](api-setup/hot-airtime.md)
+  - [NetOne API](api-setup/netone.md)
+  - [Xash Econet API](api-setup/xash-econet.md)
+  - [Kazang API](api-setup/kazang.md)
+  - [Meta API](api-setup/meta.md)
