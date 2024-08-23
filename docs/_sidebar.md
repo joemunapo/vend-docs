@@ -8,6 +8,7 @@
   - [Set Password](auth/set-password.md)
   - [Resend User Number](auth/resend-user-number.md)
   - [Login](auth/login.md)
+  - [Reset Password](auth/reset-password.md)
   - [Create Business](auth/create-business.md)
   - [Fetch Profile](auth/fetch-profile.md)
 
