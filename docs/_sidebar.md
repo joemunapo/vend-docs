@@ -9,6 +9,7 @@
   - [Resend User Number](auth/resend-user-number.md)
   - [Login](auth/login.md)
   - [Reset Password](auth/reset-password.md)
+  - [Fetch Business Categories](auth/business-categories.md)
   - [Create Business](auth/create-business.md)
   - [Fetch Profile](auth/fetch-profile.md)
 
