@@ -10,7 +10,7 @@ This endpoint retrieves a list of wifi vouchers.
 
 **Endpoint:** `/api/v1/wifi/vouchers` 
 
-Retrieves a list of available wifi vouchers grouped by amount, duration and data limit. The #### 
+Retrieves a list of available wifi vouchers grouped by amount, duration and data limit.
 
 ### Responses
 

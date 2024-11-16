@@ -29,7 +29,6 @@
 - [Wifi](wifi/index.md)
 
   - [Available Wifi](wifi/available-vouchers.md)
-  - [Buy Direct Wifi](wifi/buy-direct.md)
   - [Buy Bundle Wifi](wifi/buy-voucher.md)
 
 - [Electricity](electricity/index.md)
