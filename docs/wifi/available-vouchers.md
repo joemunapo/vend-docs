@@ -46,4 +46,4 @@ Retrieves a list of available wifi vouchers grouped by amount, duration and data
 }
 ```
 
-[Previous](/bundle/index.md) | [Next](/bundle/buy-direct.md)
+[Previous](/wifi/index.md) | [Next](/wifi/buy-voucher.md)
