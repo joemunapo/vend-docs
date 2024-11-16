@@ -18,7 +18,7 @@ Purchases the specified quantity of wifi vouchers. Requires sufficient balance i
 
 | Name     | Type    | Description                           | Validation                |
 |----------|---------|---------------------------------------|---------------------------|
-| service   | integer | The ID of the bundle to purchase vouchers for | Required, valid bundle ID |
+| service   | string | The name of service to purchase vouchers for | Required, Equal WiFi |
 | amount | integer | The amount of voucher to purchase    | Required, integer |
 | quantity | integer | The number of vouchers to purchase    | Required, integer, min: 1 |
 | currency | string | The currency of vouchers to purchase    | Required, string, USD:ZIG |
