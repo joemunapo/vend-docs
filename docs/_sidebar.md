@@ -26,6 +26,12 @@
   - [Buy Direct Bundle](bundle/buy-direct.md)
   - [Buy Bundle Voucher](bundle/buy-voucher.md)
 
+  - [Wifi](wifi/index.md)
+
+  - [Available Wifi](wifi/available-bundles.md)
+  - [Buy Direct Wifi](wifi/buy-direct.md)
+  - [Buy Bundle Wifi](wifi/buy-voucher.md)
+
 - [Electricity](electricity/index.md)
 
   - [Check User Account](electricity/verify-account.md)
