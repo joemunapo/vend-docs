@@ -26,9 +26,9 @@
   - [Buy Direct Bundle](bundle/buy-direct.md)
   - [Buy Bundle Voucher](bundle/buy-voucher.md)
 
-  - [Wifi](wifi/index.md)
+- [Wifi](wifi/index.md)
 
-  - [Available Wifi](wifi/available-bundles.md)
+  - [Available Wifi](wifi/available-vouchers.md)
   - [Buy Direct Wifi](wifi/buy-direct.md)
   - [Buy Bundle Wifi](wifi/buy-voucher.md)
 
