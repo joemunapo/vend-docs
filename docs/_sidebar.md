@@ -30,6 +30,7 @@
 
   - [Available Wifi](wifi/available-vouchers.md)
   - [Buy Bundle Wifi](wifi/buy-voucher.md)
+  - [Buy using Paynow](wifi/buy-voucher-with-paynow.md)
 
 - [Electricity](electricity/index.md)
 
