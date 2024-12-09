@@ -4,67 +4,64 @@ This endpoint allows purchasing wifi vouchers.
 
 **Method:** POST
 
-**Endpoint:** `/api/v1/paynow/initiate-mobile`
+**Endpoint:** `/api/v1/mobile-payment`
 
 Purchases the specified quantity of wifi vouchers. Requires sufficient balance in the user's wallet. On success, returns details of the purchased vouchers along with updated wallet balance and earned commission.
 
 ### Headers
 
-| Name          | Value            |
-|---------------|------------------|
-| Authorization | Bearer {token}   |
+| Name          | Value          |
+| ------------- | -------------- |
+| Authorization | Bearer {token} |
 
 ### JSON Example Parameters
 
 ```json
 {
-    "reference": "Invoice 1253",
-    "phone": "0771111111",
-    "method": "ecocash",
-    "items": [
-        {          
-    "amount": 5.00,
-    "quantity": 1,
-    "currency": "USD",
-    "data_limit": "25GB",
-    "duration": 15,
-    "duration_in": "days"
-        }
-    ]
+  "reference": "Test12321",
+  "phone": "0771111111",
+  "method": "ecocash",
+  "items": [
+    {
+      "data_limit": "2GB",
+      "amount": 5.0,
+      "duration": 3,
+      "quantity": 2
+    }
+  ]
 }
 ```
-
 
 ### Responses
 
 #### Success Response:
+
 ```json
 {
-    "poll_url": "https://www.paynow.co.zw/Interface/CheckPayment/?guid=507eac5d-1a68-4fb9-92eb-446254aa5117",
-    "instructions": "This is a test transaction. Test Case: Success",
-    "pins": [
-        "71 4900"
-    ]
+  "message": "Payment initiated successfully. Use the payment_id to check status.7",
+  "payment_id": "payment_xxxxx"
 }
 ```
 
 #### Error Response:
+
 ```json
 {
-  "success": false,
-  "message": "You do not have enough balance to make this transaction."
+  "error": "PayNow mobile payment failed"
 }
 ```
 
 ### Check Payment Status
- 
+
 **Method:** POST
 
-**Endpoint:**  `api/v1/paynow/status`
+**Endpoint:** `api/v1/mobile-payment/status`
+
 ### Json sample data
+
 ```json
 {
-  "poll_url": "https://www.paynow.co.zw/Interface/CheckPayment/?guid=507eac5d-1a68-4fb9-92eb-446254aa5117"
+  "payment_id": "payment_xxxxx"
 }
 ```
 
@@ -74,7 +71,9 @@ Purchases the specified quantity of wifi vouchers. Requires sufficient balance i
 
 ```json
 {
-    "status": "paid"
+  "payment_id": "payment_xxxx",
+  "status": "paid",
+  "pins": ["12121212", "23244555"]
 }
 ```
 
