@@ -11,6 +11,7 @@
   - [Reset Password](auth/reset-password.md)
   - [Fetch Business Categories](auth/business-categories.md)
   - [Create Business](auth/create-business.md)
+  - [Fetch Services](auth/fetch-services.md)
   - [Fetch Profile](auth/fetch-profile.md)
 
 - [Airtime](airtime/index.md)
