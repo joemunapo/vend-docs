@@ -13,6 +13,7 @@ Purchases ZESA tokens based on the provided meter number, amount, and payment cu
 | Name          | Value            |
 |---------------|------------------|
 | Authorization | Bearer {token}   |
+| Content-Type  | application/json |
 
 ### Parameters
 

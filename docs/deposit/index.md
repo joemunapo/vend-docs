@@ -1,17 +1,16 @@
-# Load Funds
+# Receive Funds
 
-Welcome to the Load Funds section! Here you can find information on how to add funds to your account using various methods.
+Welcome to the Receive Funds section. This module outlines the available methods for adding funds to a user's wallet.
 
-## Bank Transfer
+Select a payment provider below to view the specific API implementation details.
 
-The [Bank Transfer](/deposit/banks.md) method allows you to securely load funds into your account by transferring money from your bank account.
+## Available Methods
 
-## Agents
+### [EcoCash](/deposit/eco.md)
+**Direct Mobile Payment** Initiate a real-time transaction that triggers a USSD push notification to the user's Econet mobile device. The user simply enters their PIN on their phone to authorize the fund transfer instantly.
 
-The [Agents](/deposit/agents.md) method provides a convenient way to load funds into your account through authorized agents. Discover how to locate agents near you, the process of loading funds, and applicable fees and limits.
+### [InnBucks](/deposit/innbucks.md)
+**Reference Code Payment** Generate a unique payment reference code (token). Users can use this code to pay for the deposit at any InnBucks counter or complete the transaction directly within the InnBucks mobile app.
 
-## InnBucks
-
-[InnBucks](/deposit/innbucks.md)
-
-For more details on each load funds method, click on the respective links above.
+### [OMari](/deposit/omari.md)
+Coming Soon
