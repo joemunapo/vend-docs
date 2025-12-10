@@ -38,6 +38,8 @@
   - [Agents](deposit/agents.md)
   - [Bank Transfer](deposit/banks.md)
   - [InnBucks](deposit/innbucks.md)
+  - [OMari](deposit/omari.md)
+  - [Poll](deposit/poll.md)
 
 - [Reports](reports/index.md)
 
