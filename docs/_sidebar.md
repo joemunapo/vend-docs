@@ -24,6 +24,8 @@
   - [Buy Direct Bundle](bundle/buy-direct.md)
   - [Buy Bundle Voucher](bundle/buy-voucher.md)
 
+- [Equal Voucher](equal-voucher/index.md)
+
 - [Electricity](electricity/index.md)
 
   - [Check User Account](electricity/verify-account.md)

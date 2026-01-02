@@ -31,6 +31,41 @@ This endpoint initiates a deposit request using EcoCash. It triggers a USSD push
 }
 ````
 
+### Usage
+
+**API Request**
+
+```bash
+curl -X POST https://your-api/v1/ecocash/pay \
+  -H "Authorization: Bearer {token}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "amount": 10.00,
+    "ecocash_phone": "0771234567",
+    "poll_url": "https://your-server.com/webhook?reference=ORDER_12345"
+  }'
+```
+
+**Webhook Callback**
+
+When the deposit status changes to `SUCCESS` or `FAILED`/`EXPIRED`, your `poll_url` will receive a POST request:
+
+```json
+{
+  "id": 123,
+  "reference": "DEP_ABC123XYZ",
+  "status": "SUCCESS",
+  "amount": "10.00",
+  "currency": "USD",
+  "status_message": "Payment successful",
+  "updated_at": "2026-01-02T23:45:00.000000Z"
+}
+```
+
+**Tip**
+
+Put your order reference as a query parameter in `poll_url` (e.g., `?reference=ORDER_12345`) to correlate webhooks with your orders.
+
 ### Response
 
 If successful, the API returns `200 OK` with a message instructing the user to check their mobile device.
