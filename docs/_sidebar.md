@@ -37,6 +37,7 @@
 
   - [Agents](deposit/agents.md)
   - [Bank Transfer](deposit/banks.md)
+  - [EcoCash](deposit/eco.md)
   - [InnBucks](deposit/innbucks.md)
   - [OMari](deposit/omari.md)
   - [Poll](deposit/poll.md)

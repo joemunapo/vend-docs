@@ -19,13 +19,15 @@ This endpoint initiates a deposit request using EcoCash. It triggers a USSD push
 | :--- | :--- | :--- | :--- |
 | `amount` | Float | **Yes** | The amount to deposit (USD). Minimum `0.1`. |
 | `ecocash_phone` | String | **Yes** | The Econet phone number to bill. Must be a valid Zimbabwean Econet number. |
+| `poll_url` | String | No | Optional webhook URL for server clients. If provided, we will forward the deposit status updates to this URL. Include your reference as a query parameter in the URL (e.g. `?reference=ORDER_12345`). |
 
 ### Example Request
 
 ```json
 {
     "amount": 10.00,
-    "ecocash_phone": "0771234567"
+    "ecocash_phone": "0771234567",
+    "poll_url": "https://client.example.com/webhooks/ecocash?reference=ORDER_12345"
 }
 ````
 
