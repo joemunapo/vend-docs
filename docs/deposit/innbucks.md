@@ -48,3 +48,4 @@ If successful, the API returns `200 OK`. The `data.code` field contains the refe
         "created_at": "2025-12-02T08:00:00.000000Z"
     }
 }
+```
