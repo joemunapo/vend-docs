@@ -16,7 +16,7 @@ Requests include the bearer token set by the request interceptor.
 | --- | --- |
 | Accept | application/json |
 | Content-Type | application/json |
-| Authorization | Bearer {access_token} |
+| Authorization | Bearer {token} |
 
 ## API Endpoints
 

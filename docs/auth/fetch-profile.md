@@ -4,14 +4,14 @@ This endpoint allows authenticated users to fetch their profile information.
 
 **Method:** `GET`
 
-**Endpoint:** `/profile`
+**Endpoint:** `/api/v1/profile`
 
 **Headers:**
 
 | Name          | Value                |
 |---------------|----------------------|
 | Content-Type  | application/json     |
-| Authorization | Bearer {access_token} |
+| Authorization | Bearer {token} |
 
 **Responses:**
 
@@ -55,7 +55,7 @@ This endpoint allows authenticated users to fetch their profile information.
   }
   ```
 
-This endpoint requires authentication. The access token needs to be included in the `Authorization` header with the `Bearer` prefix.
+This endpoint requires authentication. The session token needs to be included in the `Authorization` header with the `Bearer` prefix.
 
 Upon successful authentication, the endpoint returns a JSON response with the user's profile information, including their personal details and associated business details (if any).
 
@@ -75,6 +75,6 @@ The response includes the following fields:
   - `home_address`: The user's home address details.
   - `business_address`: The business address details.
 
-If the user is not authenticated or the access token is invalid, a 401 Unauthorized response is returned.
+If the user is not authenticated or the session token is invalid, a 401 Unauthorized response is returned.
 
 Note: The presence of the `business` field in the response depends on whether the user has created a business using the [Create Business](/auth/create-business.md) endpoint.

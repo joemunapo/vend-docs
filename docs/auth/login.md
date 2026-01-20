@@ -1,10 +1,10 @@
 # Login
 
-This endpoint allows users to authenticate and obtain an access token.
+This endpoint allows users to authenticate and obtain a session token.
 
 **Method:** `POST`
 
-**Endpoint:** `/auth/login`
+**Endpoint:** `/api/v1/auth/login`
 
 **Headers:**
 
@@ -26,8 +26,8 @@ This endpoint allows users to authenticate and obtain an access token.
   {
     "success": true,
     "message": "Login successful.",
-    "accessToken": "JIUzI1NiIsInR5cCI6IkpXVCJ9...", // DO NOT Use this key - to be Deprecated in favor of token for consistency
-    "token": "JIUzI1NiIsInR5cCI6IkpXVCJ9..."
+    "token": "JIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "tokenType": "Bearer"
   }
   ```
 
@@ -58,17 +58,17 @@ This endpoint allows users to authenticate and obtain an access token.
 
 # Logout
 
-This endpoint allows authenticated users to logout and invalidate their access token.
+This endpoint allows authenticated users to logout and invalidate their session token.
 
 **Method:** `POST`
 
-**Endpoint:** `/auth/logout`
+**Endpoint:** `/api/v1/auth/logout`
 
 **Headers:**
 
 | Name          | Value                |
 |---------------|----------------------|
-| Authorization | Bearer {access_token} |
+| Authorization | Bearer {token} |
 
 **Responses:**
 
@@ -87,4 +87,3 @@ This endpoint allows authenticated users to logout and invalidate their access t
     "message": "Unauthenticated."
   }
   ```
-

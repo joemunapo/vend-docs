@@ -4,14 +4,14 @@ This endpoint allows authenticated users to create a business.
 
 **Method:** `POST`
 
-**Endpoint:** `/auth/create-business`
+**Endpoint:** `/api/v1/auth/create-business`
 
 **Headers:**
 
 | Name          | Value                |
 |---------------|----------------------|
 | Content-Type  | application/json     |
-| Authorization | Bearer {access_token} |
+| Authorization | Bearer {token} |
 
 **Body:**
 

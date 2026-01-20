@@ -4,7 +4,7 @@ This endpoint allows users to request a resend of their user number.
 
 **Method:** `POST`
 
-**Endpoint:** `/auth/resend-user-number/{phone}`
+**Endpoint:** `/api/v1/auth/resend-user-number/{phone}`
 
 **Headers:**
 

@@ -8,8 +8,10 @@
   - [Set Password](auth/set-password.md)
   - [Resend User Number](auth/resend-user-number.md)
   - [Login](auth/login.md)
+  - [Change Password](auth/change-password.md)
   - [Create Business](auth/create-business.md)
   - [Fetch Profile](auth/fetch-profile.md)
+  - [Server Tokens](auth/server-tokens.md)
 
 - [Airtime](airtime/index.md)
 

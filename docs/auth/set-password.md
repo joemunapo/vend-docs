@@ -4,7 +4,7 @@ This endpoint allows users to set their password after registration.
 
 **Method:** `POST`
 
-**Endpoint:** `/auth/set-password`
+**Endpoint:** `/api/v1/auth/set-password`
 
 **Headers:**
 
@@ -27,8 +27,8 @@ This endpoint allows users to set their password after registration.
   {
     "success": true,
     "message": "Password set successfully.",
-    "accessToken": "JIUzI1NiIsInR5cCI6IkpXVCJ9...", // DO NOT Use this key - to be Deprecated in favor of token for consistency
-    "token": "JIUzI1NiIsInR5cCI6IkpXVCJ9..."
+    "token": "JIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "tokenType": "Bearer"
   }
   ```
 

@@ -9,7 +9,7 @@ The Services API provides a list of all active services available for transactio
 
 #### Headers
 - **Content-Type:** application/json
-- **Authorization:** Bearer \<User's Access Token\>
+- **Authorization:** Bearer {token}
 
 #### Response
 The response enumerates the services that are active and available for use, detailing their names, the commission rate applicable to transactions involving the service, and a slug for identifying the service type.

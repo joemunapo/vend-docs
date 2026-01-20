@@ -9,19 +9,26 @@ The API follows RESTful principles and uses JSON for data serialization. It prov
 The base URL for all API endpoints is:
 
 ```
-https://xv.xash.co.zw/api/v1 # Live Server
-https://xvdev.xash.co.zw/api/v1 # Development Server
+https://app.xash.co.zw # Live Server
+https://dev.xash.co.zw # Development Server
 ```
+
+All endpoints below are prefixed with `/api/v1`.
 
 ## Authentication
 
-To access protected endpoints, you need to include an access token in the `Authorization` header of your requests. The access token should be prefixed with `Bearer`. For example:
+To access protected endpoints, include a session token in the `Authorization` header of your requests. The token should be prefixed with `Bearer`. For example:
 
 ```
-Authorization: Bearer {access_token}
+Authorization: Bearer {token}
 ```
 
-Access tokens are obtained through the [Login](/auth/login.md) endpoint and have an expiration time of 1 hour.
+Session tokens are obtained through the [Login](/auth/login.md) and [Set Password](/auth/set-password.md) endpoints. The API returns `tokenType: "Bearer"`.
+
+## Token Types
+
+- **Session tokens** are for portal login only and may rotate.
+- **Server tokens** are for long-lived server integrations. They can be revoked individually without logging out of the portal.
 
 ## Endpoints
 
@@ -32,8 +39,10 @@ The following endpoints are available in the Authentication API:
 - [Resend User Number](/auth/resend-user-number.md)
 - [Login](/auth/login.md)
 - [Logout](/auth/login.md#logout)
+- [Change Password](/auth/change-password.md)
 - [Create Business](/auth/create-business.md)
 - [Fetch Profile](/auth/fetch-profile.md)
+- [Server Tokens](/auth/server-tokens.md)
 
 Click on the links above to navigate to the detailed documentation for each endpoint.
 

@@ -4,7 +4,7 @@ This endpoint allows users to register for an account.
 
 **Method:** `POST`
 
-**Endpoint:** `/auth/register`
+**Endpoint:** `/api/v1/auth/register`
 
 **Headers:**
 

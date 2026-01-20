@@ -9,14 +9,14 @@ The Wallet Query API provides a real-time snapshot of a user's financial status 
 
 #### Headers
 - **Content-Type:** application/json
-- **Authorization:** Bearer \<User's Access Token\>
+- **Authorization:** Bearer {token}
 
 #### Response
 Upon a successful request, the response includes detailed wallet information, such as the wallet's active status and the available balances in different currencies.
 
 #### Response Status Codes
 - **200 OK**: The request was successful, and the wallet information has been retrieved.
-- **401 Unauthorized**: The request failed authentication due to an invalid or expired access token.
+- **401 Unauthorized**: The request failed authentication due to an invalid or expired session token.
 
 #### Example Response
 ```json
