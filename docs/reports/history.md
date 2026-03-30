@@ -23,13 +23,13 @@ This endpoint retrieves account history for a specific currency and supports ser
 
 | Name            | Type            | Required | Description |
 | --------------- | --------------- | -------- | ----------- |
+| name            | string          | No       | Filter by a single transaction name as shown in history, for example `Deposit` |
+| names           | string or array | No       | Filter by multiple transaction names |
 | type            | string          | No       | Filter by a single transaction type |
 | types           | string or array | No       | Filter by multiple transaction types |
-| processor_id    | string          | No       | Filter by a single processor |
-| processor_ids   | string or array | No       | Filter by multiple processors |
 | from_date       | string          | No       | Return transactions from this date onward in `YYYY-MM-DD` format |
 | to_date         | string          | No       | Return transactions up to this date in `YYYY-MM-DD` format |
-| search          | string          | No       | Search transactions by reference text |
+| search          | string          | No       | Search transactions by transaction ID / UUID text |
 | per_page        | integer         | No       | Control the number of records returned per page |
 
 ### Example Requests
@@ -38,6 +38,24 @@ Fetch account history:
 
 ```http
 GET /api/v1/reports/history/USD
+```
+
+Filter by one transaction name:
+
+```http
+GET /api/v1/reports/history/USD?name=deposit
+```
+
+Filter by multiple transaction names:
+
+```http
+GET /api/v1/reports/history/USD?names[]=deposit&names[]=transfer
+```
+
+Or:
+
+```http
+GET /api/v1/reports/history/USD?names=deposit,transfer
 ```
 
 Filter by one transaction type:
@@ -56,24 +74,6 @@ Or:
 
 ```http
 GET /api/v1/reports/history/USD?types=deposit,transfer
-```
-
-Filter by one processor:
-
-```http
-GET /api/v1/reports/history/USD?processor_id=paynow
-```
-
-Filter by multiple processors:
-
-```http
-GET /api/v1/reports/history/USD?processor_ids[]=paynow&processor_ids[]=innbucks
-```
-
-Or:
-
-```http
-GET /api/v1/reports/history/USD?processor_ids=paynow,innbucks
 ```
 
 Filter by date range:
@@ -97,13 +97,13 @@ GET /api/v1/reports/history/USD?per_page=25
 Combine filters:
 
 ```http
-GET /api/v1/reports/history/USD?types[]=deposit&from_date=2026-03-01&to_date=2026-03-30&per_page=20
+GET /api/v1/reports/history/USD?names[]=deposit&from_date=2026-03-01&to_date=2026-03-30&per_page=20
 ```
 
 Or:
 
 ```http
-GET /api/v1/reports/history/USD?processor_ids[]=paynow&search=abc123
+GET /api/v1/reports/history/USD?types[]=transfer&search=abc123
 ```
 
 ### Success Response
@@ -151,6 +151,7 @@ GET /api/v1/reports/history/USD?processor_ids[]=paynow&search=abc123
 ### Notes
 
 - `currency` is part of the URL path, for example `USD`.
-- Use `types` and `processor_ids` when you need multiple values.
+- Use `name` when filtering by the label users already see in history.
+- Use `names` or `types` when you need multiple values.
 - Dates should be sent in `YYYY-MM-DD` format.
 - Pagination information is returned in the `meta` object.
