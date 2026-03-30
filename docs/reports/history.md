@@ -1,20 +1,10 @@
 # Account History
 
-## Description
+This endpoint retrieves account history for a specific currency and supports server-side filtering.
 
-Retrieve a user's account history.
+**Method:** `GET`
 
-### Method
-
-GET
-
-### Endpoint
-
-`/api/v1/reports/history/{currency}`
-
-### Endpoint Short Description
-
-Get account history for a specific currency.
+**Endpoint:** `/api/v1/reports/history/{currency}`
 
 ### Headers
 
@@ -23,17 +13,100 @@ Get account history for a specific currency.
 | Accept        | application/json |
 | Authorization | Bearer {token}   |
 
-### Parameters
+### Path Parameters
 
-| Name     | Type   | Required | Short Description        |
-| -------- | ------ | -------- | ------------------------ |
-| currency | string | true     | Currency code (e.g. USD) |
+| Name     | Type   | Required | Description                  |
+| -------- | ------ | -------- | ---------------------------- |
+| currency | string | Yes      | Currency code, for example `USD` |
 
-### Body
+### Query Parameters
 
-None
+| Name            | Type            | Required | Description |
+| --------------- | --------------- | -------- | ----------- |
+| type            | string          | No       | Filter by a single transaction type |
+| types           | string or array | No       | Filter by multiple transaction types |
+| processor_id    | string          | No       | Filter by a single processor |
+| processor_ids   | string or array | No       | Filter by multiple processors |
+| from_date       | string          | No       | Return transactions from this date onward in `YYYY-MM-DD` format |
+| to_date         | string          | No       | Return transactions up to this date in `YYYY-MM-DD` format |
+| search          | string          | No       | Search transactions by reference text |
+| per_page        | integer         | No       | Control the number of records returned per page |
 
-### Example Response
+### Example Requests
+
+Fetch account history:
+
+```http
+GET /api/v1/reports/history/USD
+```
+
+Filter by one transaction type:
+
+```http
+GET /api/v1/reports/history/USD?type=deposit
+```
+
+Filter by multiple transaction types:
+
+```http
+GET /api/v1/reports/history/USD?types[]=deposit&types[]=transfer
+```
+
+Or:
+
+```http
+GET /api/v1/reports/history/USD?types=deposit,transfer
+```
+
+Filter by one processor:
+
+```http
+GET /api/v1/reports/history/USD?processor_id=paynow
+```
+
+Filter by multiple processors:
+
+```http
+GET /api/v1/reports/history/USD?processor_ids[]=paynow&processor_ids[]=innbucks
+```
+
+Or:
+
+```http
+GET /api/v1/reports/history/USD?processor_ids=paynow,innbucks
+```
+
+Filter by date range:
+
+```http
+GET /api/v1/reports/history/USD?from_date=2026-03-01&to_date=2026-03-30
+```
+
+Search by reference:
+
+```http
+GET /api/v1/reports/history/USD?search=8d83d4d1
+```
+
+Control pagination:
+
+```http
+GET /api/v1/reports/history/USD?per_page=25
+```
+
+Combine filters:
+
+```http
+GET /api/v1/reports/history/USD?types[]=deposit&from_date=2026-03-01&to_date=2026-03-30&per_page=20
+```
+
+Or:
+
+```http
+GET /api/v1/reports/history/USD?processor_ids[]=paynow&search=abc123
+```
+
+### Success Response
 
 ```json
 {
@@ -41,21 +114,27 @@ None
   "message": "Transactions retrieved successfully",
   "data": [
     {
-      "id": 1,
-      "amount": 1000,
       "type": "deposit",
+      "name": "Deposit",
+      "id": "8d83d4d1-aaaa-bbbb-cccc-1234567890ab",
+      "reference": "1234567890AB",
+      "amount": "35.00",
+      "success": true,
+      "created_at": "2026-03-30T08:15:00.000000Z",
+      "commission": "0.000",
+      "receipt_footer": "Get airtime/bundle on your change from as little as 10 cents.",
       "currency": "USD",
-      "created_at": "2024-04-23T14:30:00+00:00"
-    },
-    {
-      "id": 2,
-      "amount": 35,
-      "type": "deposit",
-      "currency": "USD",
-      "created_at": "2024-04-23T14:31:00+00:00"
-    },
-    ...
-  ]
+      "attributes": {}
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "per_page": 15,
+    "current_page": 1,
+    "last_page": 1,
+    "from": 1,
+    "to": 1
+  }
 }
 ```
 
@@ -68,3 +147,10 @@ None
   "error": "Invalid parameter"
 }
 ```
+
+### Notes
+
+- `currency` is part of the URL path, for example `USD`.
+- Use `types` and `processor_ids` when you need multiple values.
+- Dates should be sent in `YYYY-MM-DD` format.
+- Pagination information is returned in the `meta` object.
