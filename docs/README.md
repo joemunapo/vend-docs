@@ -9,6 +9,7 @@ Our API is meticulously structured, offering you a suite of functionalities:
 - **Airtime Services**: Directly interface with mobile carriers to offer airtime recharge options.
 - **Bundle Services**: Access data and SMS bundle information and enable users to purchase bundles directly through your app.
 - **Electricity Token Services**: Provide a gateway for users to check their electricity account status and purchase tokens on-the-go.
+- **DStv Subscription Services**: Retrieve available DStv packages, verify customer accounts, collect package payments, and process package changes.
 
 ## Developer Integration
 

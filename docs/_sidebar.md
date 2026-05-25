@@ -33,6 +33,13 @@
   - [Check User Account](electricity/verify-account.md)
   - [Buy Tokens](electricity/buy-tokens.md)
 
+- [DStv](dstv/index.md)
+
+  - [Packages](dstv/packages.md)
+  - [Lookup Account](dstv/lookup.md)
+  - [Purchase Package](dstv/purchase.md)
+  - [Change Package](dstv/change-package.md)
+
 - [Transfer Credit](transfer/index.md)
   - [Initiate Transfer](transfer/initiate-transfer.md)
   - [Confirm Transfer](transfer/confirm-transfer.md)
