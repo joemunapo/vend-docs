@@ -50,9 +50,8 @@ Use this endpoint when the lookup response returns `requires_change_package: tru
     "package": {
       "name": "Compact",
       "slug": "compact",
-      "amount": 32,
-      "fee": 3,
-      "total": 35
+      "amount": 35,
+      "fee": 3
     },
     "reference": "TXN-REFERENCE",
     "transaction_reference": "DSTV-REFERENCE"
@@ -60,7 +59,7 @@ Use this endpoint when the lookup response returns `requires_change_package: tru
 }
 ```
 
-The response includes the same receipt fields as a standard purchase: `package.amount`, `package.fee`, `package.total`, `reference`, and `transaction_reference`.
+The response includes the same receipt fields as a standard purchase: `package.amount`, `package.fee`, `reference`, and `transaction_reference`.
 
 #### Error Response:
 ```json

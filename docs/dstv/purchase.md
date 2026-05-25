@@ -50,9 +50,8 @@ Before calling this endpoint, call the lookup endpoint. Only use this endpoint w
     "package": {
       "name": "Compact",
       "slug": "compact",
-      "amount": 32,
-      "fee": 3,
-      "total": 35
+      "amount": 35,
+      "fee": 3
     },
     "reference": "TXN-REFERENCE",
     "transaction_reference": "DSTV-REFERENCE"
@@ -61,9 +60,8 @@ Before calling this endpoint, call the lookup endpoint. Only use this endpoint w
 ```
 
 The response includes:
-- `package.amount`: The package amount in USD
-- `package.fee`: The service fee in USD
-- `package.total`: The total charged in USD
+- `package.amount`: The USD amount charged to the customer, including the service fee
+- `package.fee`: The service fee included in `package.amount`
 - `reference`: The Xash transaction reference
 - `transaction_reference`: The payment reference to print on the receipt
 
@@ -82,9 +80,7 @@ The response includes:
     "package": {
       "name": "Compact",
       "slug": "compact",
-      "amount": 32,
-      "fee": 3,
-      "total": 35
+      "amount": 35
     }
   }
 }

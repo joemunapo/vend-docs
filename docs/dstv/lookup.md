@@ -47,15 +47,15 @@ This endpoint verifies a DStv smartcard number for the selected package before p
     "package": {
       "name": "Compact",
       "slug": "compact",
-      "amount": 32,
-      "fee": 3,
-      "total": 35
+      "amount": 35
     }
   }
 }
 ```
 
 If `requires_change_package` is `true`, use the change package endpoint instead of the purchase endpoint.
+
+`package.amount` is the USD amount the customer pays for the selected package, including the service fee.
 
 #### Error Response:
 ```json

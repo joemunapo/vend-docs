@@ -24,12 +24,12 @@ This endpoint returns active DStv packages for the user to select.
     {
       "name": "Compact",
       "slug": "compact",
-      "amount": 32
+      "amount": 35
     },
     {
       "name": "Access",
       "slug": "access",
-      "amount": 16
+      "amount": 17.5
     }
   ]
 }
@@ -40,7 +40,7 @@ The response includes one row per package. Show this list to the user, then send
 The response includes:
 - `name`: The package name to display to the user
 - `slug`: The value to send as `package_slug` on lookup and payment requests
-- `amount`: The package amount in USD
+- `amount`: The USD amount the customer pays for this package, including the service fee
 
 Do not send the package amount back as a custom amount. Send only the selected `package_slug`.
 

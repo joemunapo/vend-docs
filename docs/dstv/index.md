@@ -17,7 +17,7 @@ To process a DStv subscription, follow these steps:
 ## API Endpoints
 
 - [Packages](/dstv/packages.md): `GET /api/v1/dstv/packages`
-  - Retrieve active DStv packages with amount, fee, and total.
+  - Retrieve active DStv packages with the customer-pay USD amount.
 
 - [Lookup Account](/dstv/lookup.md): `POST /api/v1/dstv/lookup`
   - Verify a smartcard number before payment.
@@ -38,7 +38,7 @@ To process a DStv subscription, follow these steps:
 
 4. If `requires_change_package` is `true`, call the change package endpoint.
 
-5. Use the returned `amount`, `fee`, `total`, `reference`, and `transaction_reference` fields on the receipt.
+5. Use the returned `package.amount`, `package.fee`, `reference`, and `transaction_reference` fields from purchase or change package responses on the receipt.
 
 All DStv amounts are in USD.
 
