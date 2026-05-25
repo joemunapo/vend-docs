@@ -28,7 +28,7 @@ Use this endpoint when the lookup response returns `requires_change_package: tru
 
 ```json
 {
-  "smart_card_number": "7036711607",
+  "smart_card_number": "5550001234",
   "package_slug": "compact",
   "reference": "APP-ORDER-1002"
 }
@@ -42,29 +42,25 @@ Use this endpoint when the lookup response returns `requires_change_package: tru
   "success": true,
   "message": "DStv package changed successfully.",
   "data": {
-    "name": "Josiah Munapo",
-    "smartcard": "7036711607",
+    "name": "Sample Customer",
+    "smartcard": "5550001234",
     "services": [
       "DStv Compact Bouquet IS20"
     ],
     "package": {
       "name": "Compact",
       "slug": "compact",
-      "type": "bouquet",
       "amount": 32,
       "fee": 3,
       "total": 35
     },
-    "amount": 32,
-    "fee": 3,
-    "total": 35,
     "reference": "TXN-REFERENCE",
     "transaction_reference": "DSTV-REFERENCE"
   }
 }
 ```
 
-The response includes the same receipt fields as a standard purchase: `amount`, `fee`, `total`, `reference`, and `transaction_reference`.
+The response includes the same receipt fields as a standard purchase: `package.amount`, `package.fee`, `package.total`, `reference`, and `transaction_reference`.
 
 #### Error Response:
 ```json

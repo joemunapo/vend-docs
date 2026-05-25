@@ -28,7 +28,7 @@ Before calling this endpoint, call the lookup endpoint. Only use this endpoint w
 
 ```json
 {
-  "smart_card_number": "7036711607",
+  "smart_card_number": "5550001234",
   "package_slug": "compact",
   "reference": "APP-ORDER-1001"
 }
@@ -42,22 +42,18 @@ Before calling this endpoint, call the lookup endpoint. Only use this endpoint w
   "success": true,
   "message": "DStv payment completed successfully.",
   "data": {
-    "name": "Josiah Munapo",
-    "smartcard": "7036711607",
+    "name": "Sample Customer",
+    "smartcard": "5550001234",
     "services": [
       "DStv Compact Bouquet IS20"
     ],
     "package": {
       "name": "Compact",
       "slug": "compact",
-      "type": "bouquet",
       "amount": 32,
       "fee": 3,
       "total": 35
     },
-    "amount": 32,
-    "fee": 3,
-    "total": 35,
     "reference": "TXN-REFERENCE",
     "transaction_reference": "DSTV-REFERENCE"
   }
@@ -65,9 +61,9 @@ Before calling this endpoint, call the lookup endpoint. Only use this endpoint w
 ```
 
 The response includes:
-- `amount`: The package amount in USD
-- `fee`: The service fee in USD
-- `total`: The total charged in USD
+- `package.amount`: The package amount in USD
+- `package.fee`: The service fee in USD
+- `package.total`: The total charged in USD
 - `reference`: The Xash transaction reference
 - `transaction_reference`: The payment reference to print on the receipt
 
@@ -77,16 +73,19 @@ The response includes:
   "success": false,
   "message": "This smartcard is not currently on the selected package. Use change package instead.",
   "data": {
-    "name": "Josiah Munapo",
-    "smartcard": "7036711607",
+    "name": "Sample Customer",
+    "smartcard": "5550001234",
     "services": [
       "DStv Access Bouquet IS20"
     ],
-    "package_matches": false,
     "requires_change_package": true,
-    "amount": 32,
-    "fee": 3,
-    "total": 35
+    "package": {
+      "name": "Compact",
+      "slug": "compact",
+      "amount": 32,
+      "fee": 3,
+      "total": 35
+    }
   }
 }
 ```

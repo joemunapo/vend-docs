@@ -25,7 +25,7 @@ This endpoint verifies a DStv smartcard number for the selected package before p
 
 ```json
 {
-  "smart_card_number": "7036711607",
+  "smart_card_number": "5550001234",
   "package_slug": "compact"
 }
 ```
@@ -38,24 +38,19 @@ This endpoint verifies a DStv smartcard number for the selected package before p
   "success": true,
   "message": "DStv account verified successfully.",
   "data": {
-    "name": "Josiah Munapo",
-    "smartcard": "7036711607",
+    "name": "Sample Customer",
+    "smartcard": "5550001234",
     "services": [
       "DStv Compact Bouquet IS20"
     ],
-    "package_matches": true,
     "requires_change_package": false,
     "package": {
       "name": "Compact",
       "slug": "compact",
-      "type": "bouquet",
       "amount": 32,
       "fee": 3,
       "total": 35
-    },
-    "amount": 32,
-    "fee": 3,
-    "total": 35
+    }
   }
 }
 ```
