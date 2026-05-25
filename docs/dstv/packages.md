@@ -1,6 +1,6 @@
 # DStv Packages
 
-This endpoint returns active DStv packages and their current customer-facing pricing.
+This endpoint returns active DStv packages for the user to select.
 
 **Method:** GET
 
@@ -22,29 +22,27 @@ This endpoint returns active DStv packages and their current customer-facing pri
   "message": "DStv packages retrieved successfully.",
   "data": [
     {
-      "package": {
-        "name": "Compact",
-        "slug": "compact",
-        "type": "bouquet",
-        "amount": 32,
-        "fee": 3,
-        "total": 35
-      },
-      "amount": 32,
-      "fee": 3,
-      "total": 35
+      "name": "Compact",
+      "slug": "compact",
+      "amount": 32
+    },
+    {
+      "name": "Access",
+      "slug": "access",
+      "amount": 16
     }
   ]
 }
 ```
 
+The response includes one row per package. Show this list to the user, then send the selected package's `slug` as `package_slug` on lookup, purchase, or change package requests.
+
 The response includes:
-- `package.name`: The package name to display to the user
-- `package.slug`: The value to send as `package_slug` on lookup and payment requests
-- `package.type`: The package type
+- `name`: The package name to display to the user
+- `slug`: The value to send as `package_slug` on lookup and payment requests
 - `amount`: The package amount in USD
-- `fee`: The service fee in USD
-- `total`: The total amount to charge in USD
+
+Do not send the package amount back as a custom amount. Send only the selected `package_slug`.
 
 #### Error Response:
 ```json
