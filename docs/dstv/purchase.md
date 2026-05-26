@@ -53,8 +53,7 @@ Before calling this endpoint, call the lookup endpoint. Only use this endpoint w
       "amount": 35,
       "fee": 3
     },
-    "reference": "TXN-REFERENCE",
-    "transaction_reference": "DSTV-REFERENCE"
+    "reference": "TXN-REFERENCE"
   }
 }
 ```
@@ -63,7 +62,6 @@ The response includes:
 - `package.amount`: The USD amount charged to the customer, including the service fee
 - `package.fee`: The service fee included in `package.amount`
 - `reference`: The Xash transaction reference
-- `transaction_reference`: The payment reference to print on the receipt
 
 #### Package Change Required:
 ```json

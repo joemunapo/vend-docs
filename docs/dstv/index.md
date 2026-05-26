@@ -38,7 +38,7 @@ To process a DStv subscription, follow these steps:
 
 4. If `requires_change_package` is `true`, call the change package endpoint.
 
-5. Use the returned `package.amount`, `package.fee`, `reference`, and `transaction_reference` fields from purchase or change package responses on the receipt.
+5. Use the returned `package.amount`, `package.fee`, and `reference` fields from purchase or change package responses on the receipt.
 
 All DStv amounts are in USD.
 

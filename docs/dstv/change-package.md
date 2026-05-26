@@ -53,13 +53,12 @@ Use this endpoint when the lookup response returns `requires_change_package: tru
       "amount": 35,
       "fee": 3
     },
-    "reference": "TXN-REFERENCE",
-    "transaction_reference": "DSTV-REFERENCE"
+    "reference": "TXN-REFERENCE"
   }
 }
 ```
 
-The response includes the same receipt fields as a standard purchase: `package.amount`, `package.fee`, `reference`, and `transaction_reference`.
+The response includes the same receipt fields as a standard purchase: `package.amount`, `package.fee`, and `reference`.
 
 #### Error Response:
 ```json
