@@ -1,12 +1,12 @@
 # Purchase DStv Package
 
-This endpoint pays for a DStv smartcard that is already on the selected package.
+This endpoint pays the selected DStv package amount to a smartcard.
 
 **Method:** POST
 
 **Endpoint:** `/api/v1/dstv/purchase`
 
-Before calling this endpoint, call the lookup endpoint. Only use this endpoint when `requires_change_package` is `false`.
+Before calling this endpoint, call the lookup endpoint to confirm the smartcard details.
 
 ### Headers
 
@@ -63,27 +63,6 @@ The response includes:
 - `package.fee`: The service fee included in `package.amount`
 - `reference`: The Xash transaction reference
 
-#### Package Change Required:
-```json
-{
-  "success": false,
-  "message": "This smartcard is not currently on the selected package. Use change package instead.",
-  "data": {
-    "name": "Sample Customer",
-    "smartcard": "5550001234",
-    "services": [
-      "DStv Access Bouquet IS20"
-    ],
-    "requires_change_package": true,
-    "package": {
-      "name": "Compact",
-      "slug": "compact",
-      "amount": 35
-    }
-  }
-}
-```
-
 #### Error Response:
 ```json
 {
@@ -92,4 +71,4 @@ The response includes:
 }
 ```
 
-[Previous](/dstv/lookup.md) | [Next](/dstv/change-package.md)
+[Previous](/dstv/lookup.md)

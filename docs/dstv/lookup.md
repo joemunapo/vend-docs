@@ -1,6 +1,6 @@
 # Lookup DStv Account
 
-This endpoint verifies a DStv smartcard number for the selected package before payment.
+This endpoint verifies a DStv smartcard number before payment.
 
 **Method:** POST
 
@@ -43,7 +43,6 @@ This endpoint verifies a DStv smartcard number for the selected package before p
     "services": [
       "DStv Compact Bouquet IS20"
     ],
-    "requires_change_package": false,
     "package": {
       "name": "Compact",
       "slug": "compact",
@@ -52,8 +51,6 @@ This endpoint verifies a DStv smartcard number for the selected package before p
   }
 }
 ```
-
-If `requires_change_package` is `true`, use the change package endpoint instead of the purchase endpoint.
 
 `package.amount` is the USD amount the customer pays for the selected package, including the service fee.
 

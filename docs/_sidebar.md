@@ -38,7 +38,6 @@
   - [Packages](dstv/packages.md)
   - [Lookup Account](dstv/lookup.md)
   - [Purchase Package](dstv/purchase.md)
-  - [Change Package](dstv/change-package.md)
 
 - [Transfer Credit](transfer/index.md)
   - [Initiate Transfer](transfer/initiate-transfer.md)
