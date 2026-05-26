@@ -22,15 +22,13 @@ Before calling this endpoint, call the lookup endpoint to confirm the smartcard 
 | smart_card_number | string | The customer's DStv smartcard number             | Required, 5 to 20 digits |
 | package_slug      | string | The selected package slug from the packages list | Required, active package |
 | currency          | string | Payment currency                                 | Optional, must be USD when supplied |
-| reference         | string | Your optional client reference                   | Optional, max 100 characters |
 
 ### Example Request
 
 ```json
 {
   "smart_card_number": "5550001234",
-  "package_slug": "compact",
-  "reference": "APP-ORDER-1001"
+  "package_slug": "compact"
 }
 ```
 
