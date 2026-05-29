@@ -2,6 +2,8 @@
 
 This endpoint initiates a deposit request using OMari. It triggers a prompt on the user's mobile device to authorize the transaction.
 
+The initiate response returns a `transactionReference`. Keep this value because it is required when submitting the OTP in the confirmation step.
+
 ## Initiate Payment
 
 **Method:** POST
@@ -21,7 +23,7 @@ This endpoint initiates a deposit request using OMari. It triggers a prompt on t
 | :--- | :--- | :--- | :--- |
 | `amount` | Float | **Yes** | The amount to deposit (USD). Minimum `0.1`. |
 | `omari_phone` | String | **Yes** | The OMari phone number to bill. Must be a valid Zimbabwean number. |
-| `poll_url` | String | No | Optional webhook URL for server clients. If provided, we will forward the deposit status updates to this URL. |
+| `poll_url` | String | No | Optional webhook URL for server clients. If provided, we will forward deposit status updates to this URL. Include your reference as a query parameter in the URL (e.g. `?reference=ORDER_12345`). |
 
 ### Example Request
 
@@ -45,22 +47,23 @@ If successful, the API returns `200 OK` with a message instructing the user to c
     "id": 210,
     "amount": "10.00",
     "currency": "USD",
-    "status": "PENDING",
-    "status_message": "Check mobile to complete payment.",
-    "poll_url": "https://api.xash.co.zw/api/v1/omari/poll/210",
-    "expires_at": "2025-12-02T08:15:00.000000Z",
-    "created_at": "2025-12-02T08:00:00.000000Z"
+    "status": "AWAITING_PAYMENT",
+    "expires_at": "2026-05-29T21:54:32.118053Z",
+    "created_at": "2026-05-29T21:39:32.000000Z",
+    "poll_url": "https://api.xash.co.zw/api/v1/innbucks/poll/210",
+    "transactionReference": "OMARI_REF_12345",
+    "status_message": "Check mobile to complete payment."
   }
 }
 ```
 
-**Note:** The API response `poll_url` is currently generated using a method mapping that only distinguishes EcoCash and InnBucks. If it returns an InnBucks `poll_url` for OMari, use the OMari poll endpoint below in your integrations.
+**Note:** OMari responses can currently return a `data.poll_url` under `/api/v1/innbucks/poll/{id}`. Use the `poll_url` exactly as returned by the API. If you build the URL manually, `/api/v1/omari/poll/{id}` is also accepted.
 
 ## Poll Status
 
 **Method:** GET
 
-**Endpoint:** `/api/v1/omari/poll/{payment}`
+**Endpoint:** Use the `data.poll_url` returned by the initiate response. Manual OMari polling is also available at `/api/v1/omari/poll/{payment}`.
 
 ### Headers
 
@@ -78,7 +81,7 @@ If successful, the API returns `200 OK` with a message instructing the user to c
 ### Example Request
 
 ```http
-GET /api/v1/omari/poll/210
+GET /api/v1/innbucks/poll/210
 ```
 
 ### Response
@@ -88,23 +91,24 @@ The response includes the same fields as the payment initiation.
 ```json
 {
   "success": true,
-  "message": "Payment pending",
+  "message": "Check mobile to complete payment.",
   "data": {
     "id": 210,
     "amount": "10.00",
     "currency": "USD",
-    "status": "PENDING",
-    "status_message": "Check mobile to complete payment.",
-    "poll_url": "https://api.xash.co.zw/api/v1/omari/poll/210",
-    "expires_at": "2025-12-02T08:15:00.000000Z",
-    "created_at": "2025-12-02T08:00:00.000000Z"
+    "status": "AWAITING_PAYMENT",
+    "expires_at": "2026-05-29T21:54:32.118053Z",
+    "created_at": "2026-05-29T21:39:32.000000Z",
+    "poll_url": "https://api.xash.co.zw/api/v1/innbucks/poll/210",
+    "transactionReference": "OMARI_REF_12345",
+    "status_message": "Check mobile to complete payment."
   }
 }
 ```
 
 ## Confirm Payment (OTP)
 
-Use this endpoint when OMari returns an OTP confirmation step.
+Use this endpoint after the customer receives the OMari OTP. The confirmation request sends the OTP and the first leg `transactionReference` back to Smile&Pay to finalize the payment.
 
 **Method:** POST
 
@@ -121,9 +125,9 @@ Use this endpoint when OMari returns an OTP confirmation step.
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `transactionReference` | String | **Yes** | Reference returned by OMari. |
-| `otp` | String | **Yes** | One-time password provided by the user. |
-| `omariMobile` | String | **Yes** | OMari mobile number. |
+| `transactionReference` | String | **Yes** | Transaction reference returned by `/api/v1/omari/pay` as `data.transactionReference`. |
+| `otp` | String | **Yes** | OTP sent to the customer's OMari mobile number. |
+| `omariMobile` | String | **Yes** | OMari mobile number used for the payment. |
 
 ### Example Request
 
@@ -140,10 +144,21 @@ Use this endpoint when OMari returns an OTP confirmation step.
 ```json
 {
   "success": true,
-  "message": "Payment confirmed.",
+  "message": "Confirmation processed",
   "data": {
-    "id": 210,
-    "status": "SUCCESS"
+    "responseMessage": "Payment confirmed",
+    "responseCode": "00",
+    "status": "PAID",
+    "transactionReference": "OMARI_REF_12345"
   }
 }
 ```
+
+## Client Flow
+
+1. Call `/api/v1/omari/pay`.
+2. Store `data.transactionReference`.
+3. Ask the customer for the OTP sent to their OMari mobile number.
+4. Call `/api/v1/omari/confirm` with `transactionReference`, `otp`, and `omariMobile`.
+5. Poll the returned `data.poll_url` from the first leg until the status changes from `AWAITING_PAYMENT`/`PENDING` to a final status such as `SUCCESS`, `FAILED`, or `EXPIRED`.
+6. If you provided a request `poll_url`, listen for the webhook update on your own URL as well.
