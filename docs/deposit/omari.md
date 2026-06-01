@@ -23,7 +23,8 @@ The initiate response returns a `transactionReference`. Keep this value because 
 | :--- | :--- | :--- | :--- |
 | `amount` | Float | **Yes** | The amount to deposit (USD). Minimum `0.1`. |
 | `omari_phone` | String | **Yes** | The OMari phone number to bill. Must be a valid Zimbabwean number. |
-| `poll_url` | String | No | Optional webhook URL for server clients. If provided, we will forward deposit status updates to this URL. Include your reference as a query parameter in the URL (e.g. `?reference=ORDER_12345`). |
+| `callback_url` | String | No | Optional HTTP(S) callback URL for server clients. If provided, Xash will POST deposit status updates to this URL. Browser and mobile-only clients can omit it and use `data.poll_url` instead. |
+| `poll_url` | String | No | Legacy alias for `callback_url`. New integrations should use `callback_url`. |
 
 ### Example Request
 
@@ -31,7 +32,7 @@ The initiate response returns a `transactionReference`. Keep this value because 
 {
   "amount": 10.0,
   "omari_phone": "0771234567",
-  "poll_url": "https://client.example.com/webhooks/omari?reference=ORDER_12345"
+  "callback_url": "https://client.example.com/webhooks/xash/omari?reference=ORDER_12345"
 }
 ```
 
@@ -50,14 +51,14 @@ If successful, the API returns `200 OK` with a message instructing the user to c
     "status": "AWAITING_PAYMENT",
     "expires_at": "2026-05-29T21:54:32.118053Z",
     "created_at": "2026-05-29T21:39:32.000000Z",
-    "poll_url": "https://api.xash.co.zw/api/v1/innbucks/poll/210",
+    "poll_url": "https://api.xash.co.zw/api/v1/omari/poll/210",
     "transactionReference": "OMARI_REF_12345",
     "status_message": "Check mobile to complete payment."
   }
 }
 ```
 
-**Note:** OMari responses can currently return a `data.poll_url` under `/api/v1/innbucks/poll/{id}`. Use the `poll_url` exactly as returned by the API. If you build the URL manually, `/api/v1/omari/poll/{id}` is also accepted.
+**Note:** `data.poll_url` is the Xash polling endpoint. It is separate from your optional `callback_url`.
 
 ## Poll Status
 
@@ -81,7 +82,7 @@ If successful, the API returns `200 OK` with a message instructing the user to c
 ### Example Request
 
 ```http
-GET /api/v1/innbucks/poll/210
+GET /api/v1/omari/poll/210
 ```
 
 ### Response
@@ -99,7 +100,7 @@ The response includes the same fields as the payment initiation.
     "status": "AWAITING_PAYMENT",
     "expires_at": "2026-05-29T21:54:32.118053Z",
     "created_at": "2026-05-29T21:39:32.000000Z",
-    "poll_url": "https://api.xash.co.zw/api/v1/innbucks/poll/210",
+    "poll_url": "https://api.xash.co.zw/api/v1/omari/poll/210",
     "transactionReference": "OMARI_REF_12345",
     "status_message": "Check mobile to complete payment."
   }
@@ -161,4 +162,4 @@ Use this endpoint after the customer receives the OMari OTP. The confirmation re
 3. Ask the customer for the OTP sent to their OMari mobile number.
 4. Call `/api/v1/omari/confirm` with `transactionReference`, `otp`, and `omariMobile`.
 5. Poll the returned `data.poll_url` from the first leg until the status changes from `AWAITING_PAYMENT`/`PENDING` to a final status such as `SUCCESS`, `FAILED`, or `EXPIRED`.
-6. If you provided a request `poll_url`, listen for the webhook update on your own URL as well.
+6. If you provided a request `callback_url`, listen for the callback update on your own URL as well.

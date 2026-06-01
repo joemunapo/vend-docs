@@ -50,6 +50,7 @@
   - [EcoCash](deposit/eco.md)
   - [InnBucks](deposit/innbucks.md)
   - [OMari](deposit/omari.md)
+  - [Crypto (BEP20)](deposit/crypto.md)
   - [Poll](deposit/poll.md)
 
 - [Reports](reports/index.md)

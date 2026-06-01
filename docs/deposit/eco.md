@@ -19,7 +19,8 @@ This endpoint initiates a deposit request using EcoCash. It triggers a USSD push
 | :--- | :--- | :--- | :--- |
 | `amount` | Float | **Yes** | The amount to deposit (USD). Minimum `0.1`. |
 | `ecocash_phone` | String | **Yes** | The Econet phone number to bill. Must be a valid Zimbabwean Econet number. |
-| `poll_url` | String | No | Optional webhook URL for server clients. If provided, we will forward the deposit status updates to this URL. Include your reference as a query parameter in the URL (e.g. `?reference=ORDER_12345`). |
+| `callback_url` | String | No | Optional HTTP(S) callback URL for server clients. If provided, Xash will POST deposit status updates to this URL. Browser and mobile-only clients can omit it and use `data.poll_url` instead. |
+| `poll_url` | String | No | Legacy alias for `callback_url`. New integrations should use `callback_url`. |
 
 ### Example Request
 
@@ -27,9 +28,9 @@ This endpoint initiates a deposit request using EcoCash. It triggers a USSD push
 {
     "amount": 10.00,
     "ecocash_phone": "0771234567",
-    "poll_url": "https://client.example.com/webhooks/ecocash?reference=ORDER_12345"
+    "callback_url": "https://client.example.com/webhooks/xash/ecocash?reference=ORDER_12345"
 }
-````
+```
 
 ### Usage
 
@@ -42,29 +43,31 @@ curl -X POST https://your-api/v1/ecocash/pay \
   -d '{
     "amount": 10.00,
     "ecocash_phone": "0771234567",
-    "poll_url": "https://your-server.com/webhook?reference=ORDER_12345"
+    "callback_url": "https://your-server.com/webhook?reference=ORDER_12345"
   }'
 ```
 
 **Webhook Callback**
 
-When the deposit status changes to `SUCCESS` or `FAILED`/`EXPIRED`, your `poll_url` will receive a POST request:
+When the deposit status changes to `SUCCESS` or `FAILED`/`EXPIRED`, your `callback_url` will receive a POST request from Xash:
 
 ```json
 {
   "id": 123,
   "reference": "DEP_ABC123XYZ",
+  "method": "ecocash",
   "status": "SUCCESS",
   "amount": "10.00",
   "currency": "USD",
   "status_message": "Payment successful",
+  "gateway_reference": null,
   "updated_at": "2026-01-02T23:45:00.000000Z"
 }
 ```
 
 **Tip**
 
-Put your order reference as a query parameter in `poll_url` (e.g., `?reference=ORDER_12345`) to correlate webhooks with your orders.
+Put your order reference as a query parameter in `callback_url` (e.g., `?reference=ORDER_12345`) to correlate callbacks with your orders.
 
 ### Response
 

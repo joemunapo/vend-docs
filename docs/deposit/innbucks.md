@@ -26,7 +26,7 @@ This endpoint generates a payment reference code for InnBucks. The user can use 
 {
     "amount": 25.00
 }
-````
+```
 
 ### Response
 

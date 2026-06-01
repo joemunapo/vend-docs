@@ -18,10 +18,14 @@ Generate a unique payment reference code (token). Users can use this code to pay
 **Mobile Wallet Payment**
 Initiate a deposit request specifically for the OMari payment gateway.
 
+### [Crypto](/deposit/crypto.md)
+**USDT BEP20 Payment**
+Create a CryptoPay deposit address and return the payment instructions your customer should use to send USDT on BEP20. Crypto deposits credit the USD wallet after the payment is confirmed on-chain.
+
 ---
 
 ## Transaction Status
 
 ### [Check Status (Poll)](/deposit/poll.md)
 **Verify Payment**
-Since mobile payments are asynchronous, use this endpoint to poll the status of a transaction (e.g., check if the user has entered their PIN or if the counter payment is complete).
+Since deposits are asynchronous, use this endpoint to poll the status of a transaction (e.g., check if the user has entered their PIN, if the counter payment is complete, or if a crypto payment is confirmed).
