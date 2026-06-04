@@ -154,4 +154,5 @@ GET /api/v1/reports/history/USD?types[]=transfer&search=abc123
 - Use `name` when filtering by the label users already see in history.
 - Use `names` or `types` when you need multiple values.
 - Dates should be sent in `YYYY-MM-DD` format.
+- ZWG mobile-money deposits still appear in `/api/v1/reports/history/USD` because the wallet is credited in USD. Their history name includes the charge currency, for example `Deposit via EcoCash (ZWG)`.
 - Pagination information is returned in the `meta` object.

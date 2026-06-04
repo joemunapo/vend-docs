@@ -24,7 +24,7 @@ Crypto deposits are credited to the USD wallet after CryptoPay confirms the paym
 | `callback_url` | String | No | Optional HTTP(S) callback URL for server clients. If provided, Xash will POST status updates to this URL after receiving provider updates. Browser and mobile-only clients can omit it and use `data.poll_url` instead. |
 | `poll_url` | String | No | Legacy alias for `callback_url`. New integrations should use `callback_url`. |
 
-`callback_url` must be an HTTP(S) URL without credentials or local/private IP hosts.
+Use a publicly reachable HTTPS URL for `callback_url`.
 
 ### Example Request
 

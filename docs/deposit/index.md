@@ -18,9 +18,37 @@ Generate a unique payment reference code (token). Users can use this code to pay
 **Mobile Wallet Payment**
 Initiate a deposit request specifically for the OMari payment gateway.
 
+### [Card](/deposit/card.md)
+**Visa / Mastercard Payment**
+Initiate a card checkout and handle any returned 3D Secure challenge HTML. Card deposits currently charge and credit USD.
+
 ### [Crypto](/deposit/crypto.md)
 **USDT BEP20 Payment**
 Create a CryptoPay deposit address and return the payment instructions your customer should use to send USDT on BEP20. Crypto deposits credit the USD wallet after the payment is confirmed on-chain.
+
+### ZWG Mobile-Money Deposits
+
+EcoCash, OMari, and InnBucks can bill the customer in ZWG while crediting the user's USD wallet. Send `charge_currency: "ZWG"` with the normal deposit request. The `amount` remains the USD wallet credit amount, and the response includes `charge_amount`, `charge_currency`, and `exchange_rate`.
+
+You can also use the generic receive endpoint:
+
+**Method:** POST
+
+**Endpoint:** `/api/v1/payments/receive`
+
+Send the same fields as the provider-specific endpoint, plus `method`.
+
+```json
+{
+  "method": "ecocash",
+  "amount": 10.00,
+  "charge_currency": "ZWG",
+  "ecocash_phone": "0771234567",
+  "callback_url": "https://client.example.com/webhooks/xash/deposit?reference=ORDER_12345"
+}
+```
+
+Allowed `method` values are `ecocash`, `innbucks`, `omari`, `card`, and `crypto`.
 
 ---
 

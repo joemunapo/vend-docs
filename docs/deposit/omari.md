@@ -21,8 +21,9 @@ The initiate response returns a `transactionReference`. Keep this value because 
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `amount` | Float | **Yes** | The amount to deposit (USD). Minimum `0.1`. |
+| `amount` | Float | **Yes** | The USD wallet amount to credit after the payment succeeds. Minimum `0.1`. |
 | `omari_phone` | String | **Yes** | The OMari phone number to bill. Must be a valid Zimbabwean number. |
+| `charge_currency` | String | No | Use `ZWG` to bill the customer in ZWG while crediting the USD wallet. Defaults to `USD`. |
 | `callback_url` | String | No | Optional HTTP(S) callback URL for server clients. If provided, Xash will POST deposit status updates to this URL. Browser and mobile-only clients can omit it and use `data.poll_url` instead. |
 | `poll_url` | String | No | Legacy alias for `callback_url`. New integrations should use `callback_url`. |
 
@@ -36,6 +37,21 @@ The initiate response returns a `transactionReference`. Keep this value because 
 }
 ```
 
+### ZWG OMari Request
+
+To bill the customer in ZWG, send `charge_currency: "ZWG"`. The `amount` remains the USD amount that will be credited to the user's wallet.
+
+```json
+{
+  "amount": 10.0,
+  "charge_currency": "ZWG",
+  "omari_phone": "0771234567",
+  "callback_url": "https://client.example.com/webhooks/xash/omari?reference=ORDER_12345"
+}
+```
+
+If the configured ZWG rate is `32`, this request credits `USD 10.00` after success and bills the provider charge as `ZWG 320.00`.
+
 ### Response
 
 If successful, the API returns `200 OK` with a message instructing the user to check their mobile device.
@@ -48,6 +64,10 @@ If successful, the API returns `200 OK` with a message instructing the user to c
     "id": 210,
     "amount": "10.00",
     "currency": "USD",
+    "payment_method": "omari",
+    "charge_amount": "320.00",
+    "charge_currency": "ZWG",
+    "exchange_rate": 32,
     "status": "AWAITING_PAYMENT",
     "expires_at": "2026-05-29T21:54:32.118053Z",
     "created_at": "2026-05-29T21:39:32.000000Z",
@@ -97,6 +117,10 @@ The response includes the same fields as the payment initiation.
     "id": 210,
     "amount": "10.00",
     "currency": "USD",
+    "payment_method": "omari",
+    "charge_amount": "320.00",
+    "charge_currency": "ZWG",
+    "exchange_rate": 32,
     "status": "AWAITING_PAYMENT",
     "expires_at": "2026-05-29T21:54:32.118053Z",
     "created_at": "2026-05-29T21:39:32.000000Z",
