@@ -109,7 +109,7 @@ Crypto responses include the address instructions and CryptoPay references.
         "poll_url": "https://api.xash.co.zw/api/v1/crypto/poll/301",
         "status_message": "Send USDT BEP20 to the provided address.",
         "gateway_reference": "ADDR_9Z7Y6X",
-        "vendor_reference": "1000123+ORDER_12345",
+        "vendor_reference": "1000123ORDER_12345",
         "instructions": {
             "address": "0x1234567890abcdef1234567890abcdef12345678",
             "token": "USDT",

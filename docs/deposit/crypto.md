@@ -20,7 +20,7 @@ Crypto deposits are credited to the USD wallet after CryptoPay confirms the paym
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | `amount` | Float | **Yes** | The amount to deposit in USD. Minimum `0.1`. |
-| `reference` | String | No | Your optional customer, order, or sub-user reference. Xash sends CryptoPay a vendor reference in the format `{user_number}` or `{user_number}+{reference}`. |
+| `reference` | String | No | Your optional customer, order, or sub-user reference. Xash sends CryptoPay a vendor reference in the format `{user_number}` or `{user_number}{reference}`. |
 | `callback_url` | String | No | Optional HTTP(S) callback URL for server clients. If provided, Xash will POST status updates to this URL after receiving provider updates. Browser and mobile-only clients can omit it and use `data.poll_url` instead. |
 | `poll_url` | String | No | Legacy alias for `callback_url`. New integrations should use `callback_url`. |
 
@@ -67,7 +67,7 @@ If successful, the API returns the payment record, Xash polling URL, and CryptoP
     "poll_url": "https://api.xash.co.zw/api/v1/crypto/poll/301",
     "status_message": "Send USDT BEP20 to the provided address.",
     "gateway_reference": "ADDR_9Z7Y6X",
-    "vendor_reference": "1000123+ORDER_12345",
+    "vendor_reference": "1000123ORDER_12345",
     "instructions": {
       "address": "0x1234567890abcdef1234567890abcdef12345678",
       "token": "USDT",
@@ -77,7 +77,7 @@ If successful, the API returns the payment record, Xash polling URL, and CryptoP
     },
     "payment": {
       "gateway_reference": "PAY_ABC123",
-      "vendor_reference": "1000123+ORDER_12345",
+      "vendor_reference": "1000123ORDER_12345",
       "status": "pending",
       "amount": "25.00",
       "token": "USDT",
@@ -95,7 +95,7 @@ If you provide `callback_url`, Xash will POST a sanitized status update to your 
 ```json
 {
   "id": 301,
-  "reference": "1000123+ORDER_12345",
+  "reference": "1000123ORDER_12345",
   "method": "crypto",
   "status": "SUCCESS",
   "amount": "25.00",
@@ -104,7 +104,7 @@ If you provide `callback_url`, Xash will POST a sanitized status update to your 
   "gateway_reference": "ADDR_9Z7Y6X",
   "updated_at": "2026-05-31T12:06:30.000000Z",
   "crypto": {
-    "vendor_reference": "1000123+ORDER_12345",
+    "vendor_reference": "1000123ORDER_12345",
     "gateway_reference": "PAY_ABC123",
     "status": "confirmed",
     "amount": "25.00",
