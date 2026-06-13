@@ -23,7 +23,9 @@ To access protected endpoints, include a session token in the `Authorization` he
 Authorization: Bearer {token}
 ```
 
-Session tokens are obtained through the [Login](/auth/login.md) and [Set Password](/auth/set-password.md) endpoints. The API returns `tokenType: "Bearer"`.
+Session tokens are obtained through the [Login](/auth/login.md), [Set Password](/auth/set-password.md), and [PIN Setup](/auth/pin.md) endpoints. The API returns `tokenType: "Bearer"`.
+
+Users can authenticate with either their password or a 5-digit PIN once a PIN has been set. New applications should prefer the OTP + PIN setup flow while keeping password login available for existing users.
 
 ## Token Types
 
@@ -36,6 +38,7 @@ The following endpoints are available in the Authentication API:
 
 - [Registration](/auth/registration.md)
 - [Set Password](/auth/set-password.md)
+- [PIN Setup and Reset](/auth/pin.md)
 - [Resend User Number](/auth/resend-user-number.md)
 - [Login](/auth/login.md)
 - [Logout](/auth/login.md#logout)

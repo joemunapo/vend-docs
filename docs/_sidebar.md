@@ -6,6 +6,7 @@
 
   - [Registration](auth/registration.md)
   - [Set Password](auth/set-password.md)
+  - [PIN Setup and Reset](auth/pin.md)
   - [Resend User Number](auth/resend-user-number.md)
   - [Login](auth/login.md)
   - [Change Password](auth/change-password.md)
