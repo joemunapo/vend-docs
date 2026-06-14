@@ -59,4 +59,5 @@
   - [Mini Statement](reports/mini-statement.md)
   - [Account History](reports/history.md)
   - [Balances](reports/summary.md)
-  - [Commissions](reports/commissions.md)
+  - [Commission Overview](reports/commission-overview.md)
+  - [Commissions (Deprecated)](reports/commissions.md)
